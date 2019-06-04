@@ -1,0 +1,230 @@
+{% extends 'brokemon/base.html' %}
+{% load static %}
+
+{% block title %}
+Brokemon: {{ PageName }}
+{% endblock %}
+
+{% block headertitle %}
+Brokemon
+{% endblock %}
+
+{% block body %}
+<div id="date">{{ Date }}</div>
+<div class="blognav">
+  <a href="{% url "brokemonpages" LatestBlog %}">>> Latest</a>
+  <a href="{% url "brokemonpages" NextBlog %}">> Next</a>
+  <a href="{% url "brokemonpages" PrevBlog %}">Previous <</a>
+  <a href="{% url "brokemonpages" FirstBlog %}">First <<</a>
+</div>
+
+<div id="blogwrapper">
+
+  {% if IntroTitle == "" %}
+  {% else %}
+    <h2 class="partitle">{{ IntroTitle }}</h2>
+  {% endif %}
+  <p class="paragraph">{{ Intro }}</p>
+
+  {% if TypeOne == "None" %}
+  {% else %}
+    <div id="pokemon">
+
+	  <div class="traits">
+	    {% if NickName == "" %}
+		{% else %}
+		  <h2 class="trait">{{ NickName }}</h2>
+		{% endif %}
+		<div class="trait">
+	      <p class="type">{{ TypeOne }}</p>
+          {% if TypeTwo == "None" %}
+          {% else %}
+            <p class="type">{{ TypeTwo }}</p>
+          {% endif %}
+		</div>
+	  </div>
+
+	  <div class="traits">
+	    <p class="trait">{{ Nature }}</p>
+        <p class="trait">{{ Ability }}</p>
+	  </div>
+
+	  <div class="traits">
+        {% if HP > 0 %}
+          <p class="iv">HP: {{ HP }}</p>
+        {% endif %}
+        {% if Attack > 0 %}
+          <p class="iv">Attack: {{ Attack }}</p>
+        {% endif %}
+        {% if Defense > 0 %}
+          <p class="iv">Defense: {{ Defense }}</p>
+        {% endif %}
+        {% if SpAtk > 0 %}
+          <p class="iv">SpAtk: {{ SpAtk }}</p>
+        {% endif %}
+        {% if SpDef > 0 %}
+          <p class="iv">SpDef: {{ SpDef }}</p>
+        {% endif %}
+        {% if Speed > 0 %}
+          <p class="iv">Speed: {{ Speed }}</p>
+        {% endif %}
+      </div>
+	  
+	  <div class="traits">
+	    <p class="trait">{{ Item }}</p>
+	  </div>
+
+	  <div class="trait">
+        <img src=/static/brokemon/images/sprites/{{PageName}}.png alt={{PageName}}/>
+	  </div>
+
+      <div class="trait">
+        <p class="move">{{ Move1 }}</p>
+        <p class="move">{{ Move2 }}</p>
+        <p class="move">{{ Move3 }}</p>
+        <p class="move">{{ Move4 }}</p>
+      </div>
+
+    </div>
+  {% endif %}
+
+  {% if TitleOne == "" %}
+  {% else %}
+    <h2 class="partitle">{{ TitleOne }}</h2>
+  {% endif %}
+  <p class="paragraph">{{ ParOne }}</p>
+
+  {% if Pic1 == "" %}
+  {% else %}
+    <img class="pic" src=/static/brokemon/images/pics/{{Pic1}}.png/ alt={{Pic1}}/>
+  {% endif %}
+
+  {% if ParTwo == "" %}
+  {% else %}
+    {% if TitleTwo == "" %}
+    {% else %}
+      <h2 class="partitle">{{ TitleTwo }}</h2>
+    {% endif %}
+    <p class="paragraph">{{ ParTwo }}</p>
+	{% if Pic2 == "" %}
+    {% else %}
+      <img class="pic" src=/static/brokemon/images/pics/{{Pic2}}.png/ alt={{Pic2}}/>
+    {% endif %}
+  {% endif %}
+
+  {% if ParThree == "" %}
+  {% else %}
+    {% if TitleThree == "" %}
+    {% else %}
+      <h2 class="partitle">{{ TitleThree }}</h2>
+    {% endif %}
+    <p class="paragraph">{{ ParThree }}</p>
+	{% if Pic3 == "" %}
+    {% else %}
+      <img class="pic" src=/static/brokemon/images/pics/{{Pic3}}.png/ alt={{Pic3}}/>
+    {% endif %}
+  {% endif %}
+
+  {% if ParFour == "" %}
+  {% else %}
+    {% if TitleFour == "" %}
+    {% else %}
+      <h2 class="partitle">{{ TitleFour }}</h2>
+    {% endif %}
+    <p class="paragraph">{{ ParFour }}</p>
+	{% if Pic4 == "" %}
+    {% else %}
+      <img class="pic" src=/static/brokemon/images/pics/{{Pic4}}.png/ alt={{Pic4}}/>
+    {% endif %}
+  {% endif %}
+
+  {% if ParFive == "" %}
+  {% else %}
+    {% if TitleFive == "" %}
+    {% else %}
+      <h2 class="partitle">{{ TitleFive }}</h2>
+    {% endif %}
+    <p class="paragraph">{{ ParFive }}</p>
+	{% if Pic5 == "" %}
+    {% else %}
+      <img class="pic" src=/static/brokemon/images/pics/{{Pic5}}.png/ alt={{Pic5}}/>
+    {% endif %}
+  {% endif %}
+  
+  {% if ParSix == "" %}
+  {% else %}
+    {% if TitleSix == "" %}
+    {% else %}
+      <h2 class="partitle">{{ TitleSix }}</h2>
+    {% endif %}
+    <p class="paragraph">{{ ParSix }}</p>
+	{% if Pic6 == "" %}
+    {% else %}
+      <img class="pic" src=/static/brokemon/images/pics/{{Pic6}}.png/ alt={{Pic6}}/>
+    {% endif %}
+  {% endif %}
+
+  {% if ParSeven == "" %}
+  {% else %}
+    {% if TitleSeven == "" %}
+    {% else %}
+      <h2 class="partitle">{{ TitleSeven }}</h2>
+    {% endif %}
+    <p class="paragraph">{{ ParSeven }}</p>
+	{% if Pic7 == "" %}
+    {% else %}
+      <img class="pic" src=/static/brokemon/images/pics/{{Pic7}}.png/ alt={{Pic7}}/>
+    {% endif %}
+  {% endif %}
+
+  {% if ParEight == "" %}
+  {% else %}
+    {% if TitleEight == "" %}
+    {% else %}
+      <h2 class="partitle">{{ TitleEight }}</h2>
+    {% endif %}
+    <p class="paragraph">{{ ParEight }}</p>
+	{% if Pic8 == "" %}
+    {% else %}
+      <img class="pic" src=/static/brokemon/images/pics/{{Pic8}}.png/ alt={{Pic8}}/>
+    {% endif %}
+  {% endif %}
+
+  {% if ParNine == "" %}
+  {% else %}
+    {% if TitleNine == "" %}
+    {% else %}
+      <h2 class="partitle">{{ TitleNine }}</h2>
+    {% endif %}
+    <p class="paragraph">{{ ParNine }}</p>
+	{% if Pic9 == "" %}
+    {% else %}
+      <img class="pic" src=/static/brokemon/images/pics/{{Pic9}}.png/ alt={{Pic9}}/>
+    {% endif %}
+  {% endif %}
+
+  {% if ParTen == "" %}
+  {% else %}
+    {% if TitleTen == "" %}
+    {% else %}
+      <h2 class="partitle">{{ TitleTen }}</h2>
+    {% endif %}
+    <p class="paragraph">{{ ParTen }}</p>
+	{% if Pic10 == "" %}
+    {% else %}
+      <img class="pic" src=/static/brokemon/images/pics/{{Pic10}}.png/ alt={{Pic10}}/>
+    {% endif %}
+  {% endif %}
+
+  <p class="paragraph">Anyway, thanks for reading, see you next time!</p>
+  <p class="paragraph">~ Cropz</p>
+</div>
+
+<div class="blognav">
+  <a href="{% url "brokemonpages" LatestBlog %}">>> Latest</a>
+  <a href="{% url "brokemonpages" NextBlog %}">> Next</a>
+  <a href="{% url "brokemonpages" PrevBlog %}">Previous <</a>
+  <a href="{% url "brokemonpages" FirstBlog %}">First <<</a>
+</div>
+
+{% endblock %}
